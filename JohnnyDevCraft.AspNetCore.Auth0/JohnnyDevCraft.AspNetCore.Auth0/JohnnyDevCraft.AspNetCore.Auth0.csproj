@@ -2,6 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>Johnathon D Smith</Authors>
+    <Company>JohnnyDevCraft LLC</Company>
+    <Description>This library simplifies the task of adding Role and Permission based Authorization to your WebApi projects using Auth0.</Description>
+    <Copyright>2020 @ JohnnyDevCraft LLC</Copyright>
+    <PackageIcon>JDC-Icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/JohnnyDevCraft/JohnnyDevCraft.AspNetCore.Auth0/blob/master/README.md</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>aspnetcore dotnetcore auth0 authentication authorization</PackageTags>
+    <PackageReleaseNotes>In this release I have added support for the following:
+- Role based authorization
+- Permission based authorization
+- Custom Email Claims</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/JohnnyDevCraft/JohnnyDevCraft.AspNetCore.Auth0/blob/master/README.md</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +26,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="JDC-Icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
