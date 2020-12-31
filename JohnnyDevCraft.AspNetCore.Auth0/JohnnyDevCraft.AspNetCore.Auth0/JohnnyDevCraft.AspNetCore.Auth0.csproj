@@ -16,6 +16,7 @@
 - Custom Email Claims</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/JohnnyDevCraft/JohnnyDevCraft.AspNetCore.Auth0/blob/master/README.md</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ApplicationIcon>JDC-MultiIco.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

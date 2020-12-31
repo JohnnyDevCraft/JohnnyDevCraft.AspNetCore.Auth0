@@ -41,12 +41,13 @@ namespace JohnnyDevCraft.AspNetCore.Auth0.Harness
 
             services.AddScoped<CurrentUserService>();
 
-            services.AddScoped<IRoleValidator, CurrentUserService>();
+            //services.AddScoped<IRoleValidator, CurrentUserService>();
             services.AddScoped<IPermissionValidator, CurrentUserService>();
 
             var provider = services.BuildServiceProvider();
             currentUserService = (CurrentUserService) provider.GetService(typeof(CurrentUserService));
 
+            //services.AddRoleBasedAuthorizationWithRoles(currentUserService.GetRolePolicies());
             services.AddPermissionBasedAuthorizationWithPermissions(currentUserService.GetPermissions());
 
             services.AddSwaggerGen(c =>
