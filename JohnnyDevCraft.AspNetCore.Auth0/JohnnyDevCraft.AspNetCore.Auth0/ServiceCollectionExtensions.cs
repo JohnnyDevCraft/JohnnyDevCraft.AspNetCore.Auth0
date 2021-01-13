@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -89,7 +89,8 @@ namespace JohnnyDevCraft.AspNetCore.Auth0
 
 
         /// <summary>
-        /// When using custom claims in Auth0 Rules this will allow you to remap an email claim.
+        /// When using custom claims in Auth0 Rules this will allow you to remap an email claim.  This must
+        /// be called after UseAuthentication and before UseAuthorization.
         /// </summary>
         /// <param name="app"><see cref="IApplicationBuilder"/></param>
         /// <param name="name">Custom Claim Name</param>
@@ -101,6 +102,25 @@ namespace JohnnyDevCraft.AspNetCore.Auth0
 
                 userIdentity?.AddClaim(new Claim(ClaimTypes.Email,
                     userIdentity.Claims.FirstOrDefault(c => c.Type == name)?.Value ?? "unknown"));
+
+                await next.Invoke();
+            });
+        }
+
+        /// <summary>
+        /// When using custom claims in Auth0 Rules this will allow you to remap an email claim.  This must
+        /// be called after UseAuthentication and before UseAuthorization.
+        /// </summary>
+        /// <param name="app"><see cref="IApplicationBuilder"/></param>
+        /// <param name="name">Custom Claim Name</param>
+        public static void UseCustomClaim(this IApplicationBuilder app, string mapTo, string mapFrom)
+        {
+            app.Use(async (context, next) =>
+            {
+                var userIdentity = context.User.Identities.FirstOrDefault();
+
+                userIdentity?.AddClaim(new Claim(mapTo,
+                    userIdentity.Claims.FirstOrDefault(c => c.Type == mapFrom)?.Value ?? "unknown"));
 
                 await next.Invoke();
             });

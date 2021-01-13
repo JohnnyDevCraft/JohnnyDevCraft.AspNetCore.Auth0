@@ -10,13 +10,14 @@
     <RepositoryUrl>https://github.com/JohnnyDevCraft/JohnnyDevCraft.AspNetCore.Auth0/blob/master/README.md</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>aspnetcore dotnetcore auth0 authentication authorization</PackageTags>
-    <PackageReleaseNotes>In this release I have added support for the following:
-- Role based authorization
-- Permission based authorization
-- Custom Email Claims</PackageReleaseNotes>
+    <PackageReleaseNotes>
+        In this release I have added support for the following:
+        - Custom Claims Mapping Extension
+    </PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/JohnnyDevCraft/JohnnyDevCraft.AspNetCore.Auth0/blob/master/README.md</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <ApplicationIcon>JDC-MultiIco.ico</ApplicationIcon>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
